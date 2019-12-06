@@ -1,0 +1,38 @@
+# Leer archivos csv
+install.packages("readr") # primero instalar el paquete
+tusDatos <- read_csv("miarchivo.csv")# para archivos csv con delimitador ,
+tusDatos <- read_csv2("miarchivo.csv")#para archivos csv con delimitador ;
+tusDatos <- read_tsv("miarchivo.csv")#para rchivos con deimitador /t
+tusDatos <- read_delim("miarchivo.csv",sep =’|’)#para leer archivos con separador distintos como puede ser el símbolo ‘|’
+# pueden ser csv o txt se cambia el csv por txt miarchivo.txt
+library(readr)
+datos <- read_csv2("miarchivo.csv") # tener en cuenta la ubicación del archivo establecer el directorio donde estan los datos
+# desde internet
+url<-"http://datos.cfe.gob.mx/Datos/Electrificacionrural.csv"
+data<-read.csv(url)
+#Leer archivos en excel
+install.packages("readxl")
+library(readxl)
+datos <- read_excel("miarchivo.xlsx")
+misDatos <- read_excel("miarchivo.xlsx", sheet = "el nombre de la Hoja que quieres leer")
+#otra forma en excel con read.table para datos grandes es seleccionar los datos 
+read.table(file = "clipboard", sep = "\t", header=TRUE)
+con el paquete gdata
+install.packages('gdata') 
+library(gdata)
+excel2 <- read.xls('Libro1.xls', sheet=1) 
+#archivos en excel desde la web
+WebCancer <-  'http://people.cst.cmich.edu/lee1c/spss/V16_materials/DataSets_v16/Cancer.xls'
+cancerXLS <- read.xls(WebCancer)
+#archivos de spss
+install.packages("haven")
+library(haven)
+datos <- read_spss("miarchivo.sav")
+#archivos de stata y spss
+datos <- read_sas("miarchivo.sas7bdat") 
+datos <- read_dta("miarchivo.dta" )
+#cuando el archivo es demasiado grande es mejor utilizar data.table
+tusDatos <- read.table(file.choose(), skip = 2, header =TRUE, sep =‘;’) # aqui se salta las dos primeras filas y la tercera sera el nombre d elas variables
+#para leer archivos txt de internet
+> Web <- "http://people.cst.cmich.edu/lee1c/spss/V16_materials/DataSets_v16/Diseaseoutbreak.txt"
+> datosWeb1 <- read.table(Web)  # o puede escribirse la dirección directamente dentro
