@@ -1,0 +1,9 @@
+Fechas <- c("01/05/1965", "08/16/1975", "08/24/2015", "08/25/2015")
+Fechas <- as.Date(Fechas, "%m/%d/%Y")
+class(Fechas)
+Fechas2 <- c("15-07-1985", "01-01-1970", "01-12-2015", "10-02-1990")
+Fechas2 <- as.Date(Fechas2, "%d-%m-%Y")
+#edit(Fechas2)
+Fechas2[2] - Fechas2[1]
+Time difference of -5674 days
+a <- as.numeric(Sys.Date() - Fechas2[1] )# la fecha de hoy menos la fecha que esta en a posicion 1 dle vector fechas 2
