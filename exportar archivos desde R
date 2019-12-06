@@ -1,0 +1,19 @@
+#importar a csv
+write.csv(datos, 'datos.csv')#creara el archivo datos.csv donde tengas seleccionado el directorio
+#txt separado por tabulaciones
+write.table(datos, 'datos.txt', sep='\t')
+#para archivos en excel
+library(xlsx)
+write.xlsx(datos, "datos.xlsx")
+summary(Datos)
+Sumario = summary(Datos)
+capture.output(Sumario, file="Sumario.doc")
+#importar a spss
+# library(haven)
+write_sav(datos, "datos.sav")
+#guardar en rdata
+save(datos1, datos2,  file = "datos1_datos2.RData")
+#guardar todos los objetos
+save(list = ls(all = TRUE), file= "todos.RData")
+#para cargar rdata
+load("todos.RData")
