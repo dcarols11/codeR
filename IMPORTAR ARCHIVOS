@@ -36,3 +36,6 @@ tusDatos <- read.table(file.choose(), skip = 2, header =TRUE, sep =‘;’) # aq
 #para leer archivos txt de internet
 > Web <- "http://people.cst.cmich.edu/lee1c/spss/V16_materials/DataSets_v16/Diseaseoutbreak.txt"
 > datosWeb1 <- read.table(Web)  # o puede escribirse la dirección directamente dentro
+#cargar archivos de R
+datos <- readRDS("miarchivo.rds")
+load("miarchivo.Rdata) # Esto baja todos los objetos que fueron caargados en esa sesión de R, NO ES UNA BASE DE DATOS
