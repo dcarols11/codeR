@@ -1,0 +1,3 @@
+names(datos)<- c(nombre de variable1,nombre de variable2,...)
+limpiar cache 
+gc(reset = T)
